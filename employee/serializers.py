@@ -11,7 +11,7 @@ class EmployeeSerializer(serializers.Serializer):
 	gender = serializers.CharField(required=False, allow_blank=True, max_length=100)
 	address = serializers.CharField(required=False, allow_blank=True, max_length=100)
 	company = serializers.CharField(required=False, allow_blank=True, max_length=100)
-	#company = serializers.HyperlinkedIdentityField(view_name='employee_detail', lookup_field='id')
+	# company = serializers.HyperlinkedIdentityField(view_name='employee_detail', lookup_field='id')
 
 	def create(self, validated_data):
 		return Employee.objects.create(**validated_data)
